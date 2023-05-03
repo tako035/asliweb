@@ -42,17 +42,17 @@ document.querySelectorAll(".articles").forEach((a) =>
   })
 );
 
-const navShow = function (entries, observer) {
-  const [entry] = entries;
-  if (!entry.isIntersecting) nav.classList.add("sticky");
-  else nav.classList.remove("sticky");
-};
+// const navShow = function (entries, observer) {
+//   const [entry] = entries;
+//   if (!entry.isIntersecting) nav.classList.add("sticky");
+//   else nav.classList.remove("sticky");
+// };
 
-const navObserve = new IntersectionObserver(navShow, {
-  root: null,
-  treshold: 0,
-});
-navObserve.observe(header);
+// const navObserve = new IntersectionObserver(navShow, {
+//   root: null,
+//   treshold: 0,
+// });
+// navObserve.observe(header);
 
 // const initialCoords = section1.getBoundingClientRect();
 // window.addEventListener("scroll", function () {
@@ -88,6 +88,9 @@ const switchMenu = function (scrT) {
     navItem.forEach((el) => el.classList.remove("hidden"));
     socPanel.classList.remove("hidden");
     sideBarIcon.classList.add("hidden");
+    sideBar.style.width = "0";
+    sideBar.classList.add("hidden");
+    sidebarBD.classList.add("hidden");
   }
 };
 
@@ -96,7 +99,7 @@ scrType.addEventListener("change", switchMenu);
 
 const showSidebar = function () {
   sideBar.classList.remove("hidden");
-  sideBar.style.width = "40%";
+  sideBar.style.width = "60%";
   sidebarBD.classList.remove("hidden");
 };
 sideBarIcon.addEventListener("click", showSidebar);
