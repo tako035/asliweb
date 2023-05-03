@@ -3,6 +3,9 @@ const nav = document.querySelector(".nav");
 const section1 = document.querySelector("#section-1");
 const header = document.querySelector(".header");
 const scrType = window.matchMedia("(max-width: 810px");
+const sideBarIcon = document.querySelector(".side_bar_icon");
+const sideBar = document.querySelector(".side_bar");
+const sidebarBD = document.querySelector(".sidebar_backdrop");
 
 const handleHover = function (e) {
   if (e.target.classList.contains("nav_link")) {
@@ -76,7 +79,6 @@ sections.forEach((sec) => secObserver.observe(sec));
 
 const switchMenu = function (scrT) {
   const navItem = document.querySelectorAll(".nav_item");
-  const sideBarIcon = document.querySelector(".side_bar_icon");
   const socPanel = document.querySelector(".social_panel");
   if (scrT.matches) {
     navItem.forEach((el) => el.classList.add("hidden"));
@@ -91,3 +93,17 @@ const switchMenu = function (scrT) {
 
 switchMenu(scrType);
 scrType.addEventListener("change", switchMenu);
+
+const showSidebar = function () {
+  sideBar.classList.remove("hidden");
+  sideBar.style.width = "40%";
+  sidebarBD.classList.remove("hidden");
+};
+sideBarIcon.addEventListener("click", showSidebar);
+const sidebarClsBtn = document.querySelector(".side_bar_close");
+const closeSidebar = function () {
+  sideBar.style.width = "0";
+  sideBar.classList.add("hidden");
+  sidebarBD.classList.add("hidden");
+};
+sidebarClsBtn.addEventListener("click", closeSidebar);

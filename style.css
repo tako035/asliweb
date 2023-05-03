@@ -181,14 +181,15 @@ body {
   display: flex;
   position: fixed;
   flex-flow: column nowrap;
-  width: 80vw;
+  width: 0;
   height: 100vh;
   padding: 20px 30px;
   flex-flow: column nowrap;
-  transition: all 0.25s ease;
+  transition: all 0.3s;
   background-color: #00c8c8;
   justify-content: space-between;
   top: 0;
+  right: 0;
   z-index: 100;
 }
 .side_bar.hidden {
@@ -218,6 +219,24 @@ body {
 .sidebar_item:hover {
   border-radius: 18px;
   background-color: #5c5a5a94;
+}
+.side_bar_icon svg:hover {
+  fill: white;
+}
+.sidebar_backdrop {
+  display: flex;
+  position: fixed;
+  flex-flow: column;
+  width: 100vw;
+  height: 100vh;
+  z-index: 98;
+  padding: 0;
+  margin: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.322);
+}
+.sidebar_backdrop.hidden {
+  display: none;
 }
 h1 {
   font-family: "Exo 2";
