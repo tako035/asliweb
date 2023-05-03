@@ -37,54 +37,6 @@ body {
   background-attachment: fixed;
 }
 
-.wave {
-  background: rgb(255 255 255 / 25%);
-  border-radius: 1000% 1000% 0 0;
-  position: fixed;
-  width: 200%;
-  height: 12em;
-  animation: wave 10s -3s linear infinite;
-  transform: translate3d(0, 0, 0);
-  opacity: 0.8;
-  bottom: 0;
-  left: 0;
-  z-index: -1;
-}
-
-.wave:nth-of-type(2) {
-  bottom: -1.25em;
-  animation: wave 18s linear reverse infinite;
-  opacity: 0.8;
-}
-
-.wave:nth-of-type(3) {
-  bottom: -2.5em;
-  animation: wave 20s -1s reverse infinite;
-  opacity: 0.9;
-}
-
-@keyframes wave {
-  2% {
-    transform: translateX(1);
-  }
-
-  25% {
-    transform: translateX(-25%);
-  }
-
-  50% {
-    transform: translateX(-50%);
-  }
-
-  75% {
-    transform: translateX(-25%);
-  }
-
-  100% {
-    transform: translateX(1);
-  }
-}
-
 /* NAVIGATION */
 .nav {
   display: flex;
@@ -321,7 +273,7 @@ h1 {
   flex-direction: column;
   border-top: 1px solid #ccc;
   transition: transform 2s, opacity 2s;
-  height: 100vh;
+  height: 100%;
 }
 
 .section__header {
@@ -391,12 +343,14 @@ h3 {
   border-width: 2px;
 }
 .footer {
-  display: block;
-  bottom: 0;
+  display: table;
+  flex-direction: column;
+  margin-top: 90px;
   background-color: black;
   padding: 20px;
   width: 100vw;
   color: white;
+  z-index: 100;
 }
 .logo_social {
   display: flex;
@@ -417,7 +371,6 @@ h3 {
   margin-right: 15px;
 }
 .svg-inline--fa {
-  width: 15px;
   color: white;
 }
 @media screen and (max-width: 810px) {
