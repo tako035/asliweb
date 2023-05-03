@@ -79,14 +79,11 @@ sections.forEach((sec) => secObserver.observe(sec));
 
 const switchMenu = function (scrT) {
   const navItem = document.querySelectorAll(".nav_item");
-  const socPanel = document.querySelector(".social_panel");
   if (scrT.matches) {
     navItem.forEach((el) => el.classList.add("hidden"));
-    socPanel.classList.add("hidden");
     sideBarIcon.classList.remove("hidden");
   } else {
     navItem.forEach((el) => el.classList.remove("hidden"));
-    socPanel.classList.remove("hidden");
     sideBarIcon.classList.add("hidden");
     sideBar.style.width = "0";
     sideBar.classList.add("hidden");
@@ -103,6 +100,7 @@ const showSidebar = function () {
   sidebarBD.classList.remove("hidden");
 };
 sideBarIcon.addEventListener("click", showSidebar);
+
 const sidebarClsBtn = document.querySelector(".side_bar_close");
 const closeSidebar = function () {
   sideBar.style.width = "0";

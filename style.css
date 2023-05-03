@@ -57,28 +57,6 @@ body {
 .side_bar_icon.hidden {
   display: none;
 }
-.social_panel {
-  justify-content: right;
-  width: 20rem;
-}
-.social_panel.hidden {
-  display: none;
-}
-.social_links {
-  display: flex;
-  list-style-type: none;
-  justify-content: right;
-  width: 20rem;
-}
-.social_media {
-  margin: 0 8px 0 0;
-  float: left;
-}
-
-.social_media:hover {
-  opacity: 0.7;
-  cursor: pointer;
-}
 
 /* nav and stickly class at the same time */
 .nav.sticky {
