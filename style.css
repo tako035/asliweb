@@ -100,16 +100,18 @@ body {
 
 .side_bar {
   height: 100%;
-  width: 0px;
+  width: 100%;
   position: fixed;
   z-index: 1;
   top: 0;
   right: 0;
   background-color: #0ec8ce;
   overflow-x: hidden;
-  transition: 0.5s;
+  transform: translateX(110%);
+  transition: all 0.5s;
   padding-top: 60px;
   z-index: 99;
+  box-shadow: -5px 0px 10px rgba(0, 0, 0, 0.504);
   /* position: fixed;
   flex-flow: column nowrap;
   width: 0;
@@ -125,9 +127,7 @@ body {
   right: 0;
   z-index: 100; */
 }
-.side_bar.hidden {
-  display: none;
-}
+
 .sidebar_menu {
   color: whitesmoke;
   list-style: none;
@@ -253,6 +253,11 @@ h1 {
   transition: transform 2s, opacity 2s;
   height: 100%;
 }
+#section-2 {
+  /* background-color: #ef5da3; */
+  /* background-image: url("/img/6754.png"); */
+  background-color: var(--color-secondary);
+}
 
 .section__header {
   font-family: "Exo 2";
@@ -308,6 +313,7 @@ h3 {
   border-style: solid;
   border-radius: 18px;
   box-shadow: 0px 2px 3px rgb(0, 0, 0);
+  margin-bottom: 10px;
 }
 .section-post-card:hover {
   opacity: 0.7;
@@ -321,32 +327,47 @@ h3 {
   border-width: 2px;
 }
 .footer {
-  display: table;
-  flex-direction: column;
-  margin-top: 90px;
+  height: auto;
   background-color: black;
-  padding: 20px;
-  width: 100vw;
+  padding: 10px;
+  width: 100%;
   color: white;
   z-index: 100;
 }
+.footer_inner {
+  display: flex;
+  width: 100vw;
+}
 .logo_social {
   display: flex;
-  flex-flow: column;
+  flex-flow: column nowrap;
+  order: 1;
   max-height: 100px;
 }
 .footer ul {
   display: flex;
+  flex-flow: row nowrap;
   margin: 15px 0;
   align-items: center;
   padding: 0;
   list-style: none;
 }
-.footer ul li:hover {
-  color: rgba(39, 199, 239, 0.697);
+.designer {
+  order: 5;
 }
+.designer_link,
+.designer_link:link,
+.designer_link:visited {
+  color: #ffdd00;
+}
+
 .footer ul li a {
   margin-right: 15px;
+}
+.foot-1 {
+  display: flex;
+  width: 25%;
+  justify-content: space-between;
 }
 .svg-inline--fa {
   color: white;
@@ -382,5 +403,21 @@ h3 {
   .articles-panel {
     width: 50%;
     height: 50%;
+  }
+  .footer_inner {
+    display: flex;
+    flex-flow: row wrap;
+  }
+  .logo_social {
+    order: 5;
+  }
+  .designer {
+    order: 1;
+  }
+  .foot-1 {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
+    justify-content: flex-start;
   }
 }

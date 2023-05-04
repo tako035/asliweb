@@ -85,9 +85,6 @@ const switchMenu = function (scrT) {
   } else {
     navItem.forEach((el) => el.classList.remove("hidden"));
     sideBarIcon.classList.add("hidden");
-    sideBar.style.width = "0";
-    sideBar.classList.add("hidden");
-    sidebarBD.classList.add("hidden");
   }
 };
 
@@ -95,16 +92,14 @@ switchMenu(scrType);
 scrType.addEventListener("change", switchMenu);
 
 const showSidebar = function () {
-  sideBar.classList.remove("hidden");
-  sideBar.style.width = "60%";
+  sideBar.style.transform = "translateX(40%)";
   sidebarBD.classList.remove("hidden");
 };
 sideBarIcon.addEventListener("click", showSidebar);
 
 const sidebarClsBtn = document.querySelector(".side_bar_close");
 const closeSidebar = function () {
-  sideBar.style.width = "0";
-  sideBar.classList.add("hidden");
+  sideBar.style.transform = "translateX(110%)";
   sidebarBD.classList.add("hidden");
 };
 sidebarClsBtn.addEventListener("click", closeSidebar);
