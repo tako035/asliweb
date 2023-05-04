@@ -103,3 +103,4 @@ const closeSidebar = function () {
   sidebarBD.classList.add("hidden");
 };
 sidebarClsBtn.addEventListener("click", closeSidebar);
+sidebarBD.addEventListener("click", closeSidebar);
