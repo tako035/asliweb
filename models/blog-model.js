@@ -36,6 +36,7 @@ const blogCommentSchema = new mongoose.Schema({
 });
 
 const Blog = new mongoose.model("posts", blogSchema);
-const BlogComments = new mongoose.model("comments", blogSchema);
+// const BlogComments = new mongoose.model("comments", blogCommentSchema);
 
-module.exports = { Blog, BlogComments };
+module.exports = Blog;
+// module.exports = { Blog, BlogComments };
