@@ -9,16 +9,13 @@ const blogSchema = new mongoose.Schema(
     },
     title: {
       type: String,
-      required: [true, "Başlık boş olamaz!"],
+      required: [true, "Başlık giriniz!"],
       unique: true,
       trim: true,
     },
-    // dateCreated: { type: Date, default: Date.now() },
-    // datePosted: Date,
-    // dateChanged: Date,
     body: {
       type: String,
-      required: [true, "Blog içeriği boş olamaz!"],
+      required: [true, "Blog içeriği giriniz!"],
     },
     image: String,
   },
@@ -33,12 +30,16 @@ const blogCommentSchema = new mongoose.Schema(
     datePosted: { type: Date, default: Date.now() },
     text: {
       type: String,
-      required: [true, "Yorum yapmalısınız..."],
+      required: [true, "Yorum giriniz."],
     },
     author: {
       type: String,
       required: [true, "Bir isim veya rumuz giriniz!"],
       trim: true,
+    },
+    email: {
+      type: String,
+      required: [true, "Yorum yapmak için geçerli bir e-posta giriniz"],
     },
   },
   {
