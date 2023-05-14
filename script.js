@@ -22,7 +22,7 @@ nav.addEventListener("mouseover", handleHover.bind(0.5));
 nav.addEventListener("mouseout", handleHover.bind(1));
 nav.addEventListener("click", function (e) {
   if (e.target.classList.contains("nav_link")) {
-    e.preventDefault();
+    // e.preventDefault();
     const id = e.target.getAttribute("href");
     const coords = document.querySelector(id);
     //REMOVED AN OLD WAY TO SCROLL VIEW
