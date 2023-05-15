@@ -112,20 +112,6 @@ body {
   padding-top: 60px;
   z-index: 99;
   box-shadow: -5px 0px 10px rgba(0, 0, 0, 0.504);
-  /* position: fixed;
-  flex-flow: column nowrap;
-  width: 0;
-  height: 100vh;
-  padding: 20px 30px;
-  flex-flow: column nowrap;
-  transition: all 0.5s ease;
-  animation-duration: 1s;
-  overflow-x: hidden;
-  background-color: #00c8c8;
-  justify-content: space-between;
-  top: 0;
-  right: 0;
-  z-index: 100; */
 }
 
 .sidebar_menu {

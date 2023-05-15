@@ -1,5 +1,15 @@
 body {
+  font-family: "Exo 2", sans-serif;
+  font-weight: 100;
   background-color: rgb(40, 40, 40);
+  color: #423d3d;
+  line-height: 1.9;
+  background-size: 600% 600%;
+  background-attachment: fixed;
+}
+.header {
+  text-align: center;
+  color: rgb(209, 211, 211);
 }
 .blog-main {
   display: grid;
@@ -33,6 +43,13 @@ img {
 }
 
 @media screen and (max-width: 960px) {
+  .nav a {
+    float: none;
+    width: 100%;
+  }
+  .nav_item {
+    display: none;
+  }
   .blog-main {
     grid-template-columns: repeat(2, calc(50% - 14.6667px));
   }
