@@ -5,6 +5,11 @@ const blogRouter = require("./routes/blog-router");
 const userRouter = require("./routes/user-router");
 const app = express();
 app.use(express.json());
+
+app.use((req, res, next) => {
+  // console.log(req.headers);
+  next();
+});
 app.use("/api/v1/blog", blogRouter);
 app.use("/api/v1/users", userRouter);
 

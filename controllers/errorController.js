@@ -22,7 +22,7 @@ const sendErrorProd = (err, res) => {
 
 const handleCastErrorDB = (err) => {
   const message = `Invalid ${err.path} : ${err.value}`;
-  return new AppError(message, 400);
+  new AppError(message, 400);
 };
 
 const handleDublicateFieldError = (err) => {
@@ -34,6 +34,13 @@ const handleValidationError = (err) => {
   const errors = Object.values(err.errors).map((el) => el.message);
   const message = `Invalid input data : ${errors.join(". ")}`;
   return new AppError(message, 400);
+};
+const handleJWTError = (err) => {
+  return new AppError("Hatalı Jeton. Lütfen yeniden giriş yapın!", 401);
+};
+
+const handleTExpError = (err) => {
+  return new AppError("Jeton süresi doldu. Lütfen yeniden giriş yapın!", 401);
 };
 
 module.exports = (err, req, res, next) => {
@@ -48,6 +55,8 @@ module.exports = (err, req, res, next) => {
     }
     if (errDB.code === 11000) errDB = handleDublicateFieldError(errDB);
     if (errDB.name === "ValidationError") errDB = handleValidationError(errDB);
+    if (errDB.name === "JsonWebTokenError") errDB = handleJWTError(errDB);
+    if (errDB.name === "TokenExpiredError") errDB = handleTExpError(errDB);
     sendErrorProd(errDB, res);
   }
 };
