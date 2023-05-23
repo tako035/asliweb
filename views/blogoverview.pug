@@ -1,0 +1,17 @@
+extends base
+
+block content
+  h1.header YAZILAR
+  .blog-main
+    each blog in blogs
+      .blog-container
+        .blog-pic
+          img.blogimg(src=`/img/blogs/${blog.image}` onerror=`this.src='/img/blogs/blog_img.jpg'` alt=`${blog.title}`)
+        if blog.updated_at
+          .blog-info= `${blog.author.name} | ${blog.updated_at.toLocaleString("tr-TR", { year: "numeric", month: "long",day: "numeric"})}`
+        else 
+          .blog-info= `${blog.author.name} | ${blog.created_at.toLocaleString()}`
+        .blog-header
+          h2= blog.title
+        .blog-footer
+          a.btn(href=`/blog/${blog.slug}`) OKU

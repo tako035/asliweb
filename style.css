@@ -358,6 +358,7 @@ h3 {
 .svg-inline--fa {
   color: white;
 }
+
 @media screen and (max-width: 810px) {
   .nav a {
     float: none;

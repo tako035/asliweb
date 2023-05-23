@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const slugify = require("slugify");
 
 const blogSchema = new mongoose.Schema(
   {
@@ -13,6 +14,7 @@ const blogSchema = new mongoose.Schema(
       unique: true,
       trim: true,
     },
+    slug: String,
     body: {
       type: String,
       required: [true, "Blog içeriği giriniz!"],
@@ -47,6 +49,10 @@ const blogCommentSchema = new mongoose.Schema(
   }
 );
 
+blogSchema.pre("save", function (next) {
+  this.slug = slugify(this.title, { lower: true });
+  next();
+});
 // blogCommentSchema.pre("save", (next) => {
 //   this.blogId = Blog._id;
 //   next();

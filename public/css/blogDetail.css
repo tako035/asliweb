@@ -1,0 +1,130 @@
+.blog-body {
+  display: block;
+  font-size: x-large;
+  max-width: 75%;
+  padding: 20px 0px;
+  margin: 0 20%;
+  border-radius: 8px;
+  background-color: beige;
+  overflow: scroll;
+}
+
+.blog-body-pic {
+  margin: 0 20%;
+  max-width: 75%;
+}
+.comment-body {
+  display: block;
+  max-width: 60%;
+  padding: 20px 0px;
+  margin: 0 25%;
+  border-radius: 8px;
+  background-color: rgb(196, 196, 161);
+}
+
+.commenter {
+  display: flex;
+  max-width: 15%;
+  margin: 0px 25.5%;
+  padding: 3px 3px;
+  border-radius: 0px 0px 8px 8px;
+  background-color: antiquewhite;
+}
+
+.bosluk {
+  height: 20px;
+}
+
+.comment_form {
+  display: flex;
+  justify-content: center;
+}
+.form-group {
+  flex-direction: row;
+  justify-content: center;
+  width: 75%;
+}
+.row-1 {
+  display: flex;
+  padding: 20px 0;
+  justify-content: center;
+}
+.row-2 {
+  display: flex;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+.row-3 {
+  display: flex;
+  justify-content: center;
+}
+.form-text {
+  width: 50%;
+  padding: 5px;
+  overflow: scroll;
+  resize: none;
+}
+#name {
+  width: 25%;
+}
+#email {
+  width: 25%;
+}
+.form-control {
+  display: flex;
+  padding: 8px;
+  border-radius: 18px;
+  justify-content: center;
+}
+.button {
+  border-radius: 18px;
+  padding: 8px;
+  margin-bottom: 20px;
+}
+.button:hover {
+  transform: scale(1.1);
+  transition: all 0.3s;
+}
+
+@media screen and (max-width: 960px) {
+  .blog-body {
+    max-width: 90%;
+    font-size: larger;
+    margin: 0 5%;
+  }
+  .comment-body {
+    max-width: 80%;
+    margin: 0px 10%;
+  }
+
+  .commenter {
+    max-width: 25%;
+    margin: 0px 15%;
+  }
+  .form-text {
+    width: 80%;
+  }
+  #name {
+    width: 40%;
+  }
+  #email {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .blog-body {
+    max-width: 90%;
+    font-size: medium;
+    margin: 0 5%;
+  }
+  .form-text {
+    width: 100%;
+  }
+  #name {
+    width: 50%;
+  }
+  #email {
+    width: 50%;
+  }
+}

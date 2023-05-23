@@ -1,0 +1,31 @@
+extends base
+
+block content
+  div
+    h1.header= blog.title
+    .bosluk
+    .bosluk
+  div  
+    .blog-body-pic
+      img.blogimg(src=`/img/blogs/${blog.image}` onerror=`this.src='/img/blogs/blog_img.jpg'`)
+  div  
+    .blog-body
+      p=blog.body
+      .bosluk
+      .bosluk=`Yazar : ${blog.author.name} | Güncelleme : ${blog.updated_at.toLocaleString('tr-TR', { year: 'numeric', month: 'long',day: 'numeric'})}`
+    .bosluk
+  div  
+    each comment in comments 
+      .comment-body=comment.text  
+      .commenter=`Yorum yapan : ${comment.author}`    
+      .bosluk
+      .bosluk    
+  .comment_form
+    form.form-group
+      .row-1
+        textarea.form-text.form-control(name='comment' id='comment' cols='30' rows='9' placeholder='Yorum Yazın')
+      .row-2
+        input.form-control(name='name' id='name' type='text' placeholder='İsim')
+        input.form-control(name='email' id='email' type='email' placeholder='Eposta')
+      .row-3
+        button.button(type='submit') Yorum Gönder

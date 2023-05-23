@@ -1,3 +1,4 @@
+const path = require("path");
 const express = require("express");
 const rateLimit = require("express-rate-limit");
 const helmet = require("helmet");
@@ -9,11 +10,18 @@ const AppError = require("./utils/AppError");
 const errorHandler = require("./controllers/errorController");
 const blogRouter = require("./routes/blog-router");
 const userRouter = require("./routes/user-router");
+const viewRouter = require("./routes/view-router");
 
 const app = express();
 
+app.set("view engine", "pug");
+app.set("views", path.join(__dirname, "views"));
+
+// SERVE STATIC FILES
+app.use(express.static(path.join(__dirname, "public")));
+
 //SETTING SECURITY HTTP HEADERS
-app.use(helmet());
+//app.use(helmet());
 
 // LIMIT REQUESTS FROM SAME API
 const limiter = rateLimit({
@@ -37,14 +45,13 @@ app.use(xss());
 // app.use(hpp({ whitelist: ['duration']}));
 app.use(hpp());
 
-// SERVE STATIC FILES
-app.use(express.static(`${__dirname}/public`));
-
 app.use((req, res, next) => {
   // console.log(req.headers);
   next();
 });
 
+// ROUTES
+app.use("/", viewRouter);
 app.use("/api/v1/blog", blogRouter);
 app.use("/api/v1/users", userRouter);
 
